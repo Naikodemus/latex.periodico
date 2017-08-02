@@ -7,9 +7,13 @@
 - la clase PAPERTEX no compensa para las necesidades actuales.
 
 
-## PENDIENTE
+## SEGUIMIENTO
 
-- definir la retícula.
+- definir la retícula
+- definir frontpage
+- definir encabezados de página
+- definir pies de página
+- definir entornos de artículo
 
 
 ## CAMBIOS
