@@ -1,0 +1,52 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+% Construcción de una revista/periódico en LaTeX
+% diseño personal con todos los entornos que merezcan la pena
+
+% tras un porrón de horas con ella, no compensa.
+% la clase PAPERTEX no compensa.
+
+% PREÁMBULO
+\documentclass[]{article}
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% LOGICA 
+\usepackage{calc}
+\usepackage{ifthen}
+
+% TIPOGRAFÍAS Y MOTOR
+\usepackage{fontspec}
+	\usepackage{xltxtra}
+	\usepackage{xunicode}
+\setmainfont{Junicode}
+	\newcommand{\ppp}{\protect\raisebox{0.20ex}{$\therefore$}\kern 0.25mm}
+\usepackage{lettrine}
+
+% IMÁGENES
+%\usepackage{graphicx}
+%	\DeclareGraphicsExtensions{.pdf,.png,.jpg,.eps}
+%	\graphicspath{{img/}}
+%\usepackage[usenames,dvipsnames]{xcolor}
+
+% PDF - ENLACES
+%\usepackage[hidelinks]{hyperref}
+
+% MAQUETACIÓN
+\usepackage{lipsum}
+
+
+% CUERPO
+\begin{document}
+
+% HACER
+% 0- definir reticula
+% 1- definir frontpage
+% 2- definir entorno 
+
+\lipsum[1-10]
+
+\end{document}
+
+% EOF

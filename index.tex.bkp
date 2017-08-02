@@ -1,0 +1,100 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+% Trabajo propio
+% Construcción de una revista/periódico en LaTeX
+
+% DATOS DE LA PUBLICACIÓN
+\newcommand{\nombrepub}{Mi publicación}
+\newcommand{\lema}{mi periódico}
+\newcommand{\fechapub}{\today}
+
+% PREÁMBULO
+\documentclass[12pt]{article}
+\usepackage[
+	a4paper,
+	left=1.5cm,
+	top=2.0cm
+	]{geometry}
+	\textwidth=18cm
+	\textheight=25.75cm
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% lógica
+\usepackage{calc}
+\usepackage{ifthen}
+
+% tipografías y motor
+\usepackage{fontspec}
+	\usepackage{xltxtra}
+	\usepackage{xunicode}
+\setmainfont{Junicode}
+	\newcommand{\ppp}{\protect\raisebox{0.20ex}{$\therefore$}\kern 0.25mm}
+\usepackage{lettrine}
+
+% gráficos
+\usepackage{graphicx}
+	\DeclareGraphicsExtensions{.pdf,.png,.jpg,.eps}
+\usepackage[usenames,dvipsnames]{xcolor}
+	\definecolor{DarkGray}{gray}{0.35}
+	\definecolor{AshGray}{rgb}{0.7, 0.75, 0.71}
+	\definecolor{Rojo}{rgb}{1.0, 0, 0}
+	\definecolor{ForestGreen}{rgb}{0, 0.27, 0.13}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{verbatim}
+% pie de imágenes
+\usepackage[font={color=DarkGray,footnotesize},
+			skip=2.55mm,
+			labelformat=empty,
+			labelsep=newline]{caption}
+\usepackage{subcaption}
+
+
+% CABECERAS -- estilos
+\usepackage{fancyhdr}
+% setup básico
+\fancyhf{}
+	\fancyhead[C]{
+		{\color{Black}\footnotesize [~\thepage~]}\\[0mm]
+		{\color{AshGray}\rule{18cm}{0.5pt}}\\
+		}
+	\fancyfoot[C]{
+		{\color{AshGray}\rule{18cm}{0.5pt}}\\[0mm]
+		{\color{Black}\footnotesize [~\thepage~]}\\
+		}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\input{prog/estilos}
+% activación del estilo
+\pagestyle{fancy}
+
+% Gestión del texto
+\usepackage[absolute]{textpos}
+	\textblockorigin{1.5cm}{0cm}
+	\setlength{\TPHorizModule}{3cm}
+	\setlength{\TPVertModule}{1cm}
+\usepackage{multicol}
+
+\usepackage{titlesec}
+	\titleformat{\subsection}[block]
+		{\Large\scshape\bfseries}
+		{}
+		{-0cm}
+		{\color{OliveGreen} \S~ }
+\titlespacing{\subsection}{0mm}{0mm}{1.0mm}
+
+% archivos propios
+\input{prog/entornos}
+
+% maquetación
+\usepackage{lipsum}
+
+% CUERPO
+\begin{document}
+	\input{pags/portada}
+	\input{pags/p00}
+\end{document}
+
+% EOF
