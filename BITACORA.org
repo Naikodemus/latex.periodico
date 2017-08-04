@@ -1,0 +1,40 @@
+
+#+TITLE: Bitácora desarrollo periódico LaTeX
+#+AUTHOR: Naikodemus
+#+LANGUAGE: es
+#+EXCLUDE_TAGS: noexport
+#+OPTIONS: toc:nil
+
+
+* INTENCIONES
+
+- tener una plantilla para generar con LaTeX algo similar a un periódico.
+- uso personal + ponerla a disposición.
+- hacerlo comprensible leyendo el código normal, sin tener que generar documentación extra.
+- la clase PAPERTEX no compensa para las necesidades actuales.
+
+
+* SEGUIMIENTO
+** DONE definir la retícula
+   [2017-08-03 jue]
+** DONE definir frontpage
+   [2017-08-03 jue]
+** DONE definir filetes
+** DONE definir pies de página portada
+** DONE definir encabezados de página generales
+** DONE definir pies de página generales
+** DONE definir entornos de artículo generales
+** DONE definir entornos de artículos con imagen doble de apertura
+** DONE definir inserción imágenes simples
+   [2017-08-03 jue]
+** DONE noticia con imagen en el encabezado
+** DONE faldones efectivos.
+** TODO ir redactando la documentación
+
+* BITÁCORA RELEVANTE
+
+** <2017-08-04 vie>
+   Cumplidas las peticiones.
+
+** <2017-08-02 mié>
+   Comienza el trabajo. Carga de los primeros archivos, planteamiento inicial de las tareas. Para hacer a ratos.

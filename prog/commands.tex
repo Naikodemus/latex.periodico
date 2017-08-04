@@ -1,0 +1,99 @@
+%!TEX root = ../index.tex
+%!TEX encoding = UTF-8 Unicode
+
+% MEMO
+% \newcommand{\comandonuevo}{prog}
+
+% FIN NOTICIA
+\newcommand{\fin}{\color{Black}\SquareSteel}
+
+% NUEVA PÁGINA
+\newcommand{\pasapag}{\null\clearpage}
+
+% PORTADA
+\newcommand{\frontal}{
+	\thispagestyle{portada}
+	\begin{textblock}{6}(0,-0.125)
+		{\fontspec{Alfios}
+		 \fontsize{42}{0}\selectfont
+		 \color{Black}
+		 \hfill\textbf{\nombrepub}\hfill
+		}\\[1.5mm]
+		{\small\color{Gray}
+			\hfill{\MakeUppercase\lema}\hfill
+		}\\[-1.5mm]
+		{\color{AshGray}\rule{\textwidth}{0.5pt}}\\
+		\hspace*{1mm}
+		{\small\color{DarkGray}
+			\makebox[.3\textwidth][l]{\epoca\ -- \numero}%
+			\hfill
+			\makebox[.3\textwidth][c]{\fechapub}%
+			\hfill
+			\makebox[.3\textwidth][r]{\indic}%
+			\hspace{1mm}
+		}\\[-3.0mm]
+		{\color{AshGray}\rule{\textwidth}{0.5pt}}%
+	\end{textblock}
+	}
+
+
+% NOTICIAS
+\newcommand{\titulonoticia}[3]{%
+	\ifthenelse{\equal{#1}{}}
+		{}
+		{{\raggedright\rmfamily\huge\textbf{#1}\par}}
+	\ifthenelse{\equal{#2}{}}
+		{\vspace{#3mm}}
+		{{\raggedright\rmfamily\Large{\color{DarkGray} #2}\par\vspace{#3mm}}}%
+}
+
+
+% ENTRADA
+\newcommand{\entrada}[2]
+	{\ifthenelse{\equal{#2}{}}
+		{\textbf{\uppercase{#1.}}}
+		{\textbf{\uppercase{#1.} #2.}}
+	}
+
+
+% DESTACADOS
+\newcommand{\destaque}[1]{%
+	\vspace{-1.25\baselineskip}%
+	\begin{center}%
+	\hrulefill\\[0.25\baselineskip]
+	{\fontspec{DejaVu Sans}\scriptsize\bfseries#1}\\[-0.25\baselineskip]
+	\hrulefill
+	\end{center}%
+	\vspace{-0.75\baselineskip}
+}
+
+\newcommand{\caja}[2]{%
+	\noindent\fcolorbox{White}{Caja}{%
+		\parbox[b][#1em][c]{\linewidth}{\small\sffamily\textbf{#2}}
+	}
+}
+
+
+% IMAGENES
+\newcommand{\img}[5]{%
+	\begin{figure}[H]
+	\vspace{#4mm}
+	\centering
+	\noindent\includegraphics[width=#2\linewidth]{img/#1}
+	\ifthenelse{\equal{#3}{}}{}{\caption{#3}}
+	\vspace{#5mm}
+	\end{figure}
+}
+
+% FILETES
+\newcommand{\fileteV}[3]{%
+	\begin{textblock}{0}(#1,#2)
+	\color{AshGray}\line(0,-1){#3}
+	\end{textblock}
+}
+\newcommand{\fileteH}[3]{%
+	\begin{textblock}{0}(#1,#2)
+	\color{AshGray}\line(1,0){#3}
+	\end{textblock}
+}
+

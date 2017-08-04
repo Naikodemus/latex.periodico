@@ -5,44 +5,115 @@
 % uso personal
 
 % PREÁMBULO
-\documentclass[]{article}
+\documentclass[12pt]{article}
+\usepackage[
+%	showframe,
+	a4paper,
+%		width=210mm,
+%		height=297mm,
+	left=10.5mm,
+	right=10.5mm,
+	top=19.5mm,
+	bottom=22.5mm
+	]{geometry}
 \usepackage[spanish]{babel}
 \usepackage{csquotes}
+
 
 % LOGICA 
 \usepackage{calc}
 \usepackage{ifthen}
 
+
 % TIPOGRAFÍAS Y MOTOR
 \usepackage{fontspec}
 	\usepackage{xltxtra}
 	\usepackage{xunicode}
+\defaultfontfeatures{
+%	Ligatures=Historic,
+%	Style=Historic,
+	Kerning=On,
+	Style=TitlingCaps,
+	Mapping=tex-text % ligadura de los guiones
+	}
 \setmainfont{Junicode}
-	\newcommand{\ppp}{\protect\raisebox{0.20ex}{$\therefore$}\kern 0.25mm}
+
+\usepackage{marvosym}
 \usepackage{lettrine}
 
-% IMÁGENES
-%\usepackage{graphicx}
-%	\DeclareGraphicsExtensions{.pdf,.png,.jpg,.eps}
-%	\graphicspath{{img/}}
-%\usepackage[usenames,dvipsnames]{xcolor}
 
-% PDF - ENLACES
-%\usepackage[hidelinks]{hyperref}
+% IMÁGENES Y COLORES
+\usepackage{graphicx}
+	\DeclareGraphicsExtensions{.pdf,.png,.jpg,.eps}
+	\graphicspath{{img/}}
+\usepackage[usenames,dvipsnames]{xcolor}
+	\definecolor{DarkGray}{gray}{0.35}
+	\definecolor{AshGray}{rgb}{0.7, 0.75, 0.71}
+	\definecolor{Caja}{gray}{0.80}
+	\definecolor{Rojo}{rgb}{1.0, 0, 0}
+	\definecolor{ForestGreen}{rgb}{0, 0.27, 0.13}
+\usepackage{tikz}
+\usepackage{picinpar}
+\usepackage[font={color=DarkGray,footnotesize},
+	skip=2.55mm,
+	labelformat=empty,
+	labelsep=newline]{caption}
+\usepackage{wrapfig}
+
 
 % MAQUETACIÓN
 \usepackage{lipsum}
 
+% ENCABEZADOS PÁGINAS
+\usepackage{fancyhdr}
+\input{prog/fancys}
 
-% CUERPO
+
+% MANEJO TEXTO
+\usepackage[
+	absolute,
+%	showboxes
+	]{textpos}
+	\TPGrid[5.5mm,5.5mm]{6}{9}
+	\TPMargin{5mm}
+\usepackage{multicol}
+\usepackage{ragged}
+
+\parindent=1em
+\newcommand{\indentplinea}{-15.5pt}
+
+% ENTORNOS Y COMANDOS
+\input{prog/commands}
+\input{prog/entornos}
+
+
+% PDF - ENLACES
+\usepackage[hidelinks]{hyperref}
+
+
+% DATOS DE LA PUBLICACIÓN * * * * * * * * * * * * * * * * * * * * * * *
+\newcommand{\nombrepub}{COSAS QUE PASAN}
+\newcommand{\lema}{y son raras}
+\newcommand{\fechapub}{\today}
+\newcommand{\epoca}{EÓN I}
+\newcommand{\numero}{número 1}
+\newcommand{\indic}{cc-by-sa}
+
+
+% CUERPO * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 \begin{document}
 
 % HACER
-% 0- definir reticula
-% 1- definir frontpage
-% 2- definir entorno 
 
-\lipsum[1-10]
+\frontal
+
+% esta es la primera página/portada
+\input{pages/p001}\pasapag
+
+% este es el resto del periódico
+\pagestyle{pagina}
+\input{pages/p003}\pasapag
+\input{pages/p002}
 
 \end{document}
 

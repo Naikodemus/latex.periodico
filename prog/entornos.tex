@@ -1,0 +1,43 @@
+%!TEX root = ../index.tex
+%!TEX encoding = UTF-8 Unicode
+
+% MEMO
+% \newenvironment{Nombre}[Num Args.][Arg. 1]{Al entrar}{Al salir}
+
+% NOTICIAS
+\newenvironment{noticiacol1}[6]
+	{\begin{textblock}{#1}(#2,#3)%
+	 \titulonoticia{#4}{#5}{#6}
+	 \hspace{\indentplinea}%
+	}
+	{\fin\end{textblock}
+	}
+
+\newenvironment{noticiacolmulti}[8]
+	{\begin{textblock}{#1}(#2,#3)%
+	 \titulonoticia{#4}{#5}{#6}%
+	 #8\begin{multicols*}{#7}
+	 \hspace{\indentplinea}%
+	}
+	{\fin\end{multicols*}
+	 \end{textblock}
+	}
+
+% CAJAS
+\newenvironment{cajacol1}[6]
+	{\begin{textblock}{#1}(#2,#3)%
+	 \titulonoticia{#4}{#5}{#6}
+	 \hspace{\indentplinea}%
+	}
+	{\end{textblock}
+	}
+
+\newenvironment{cajacolmulti}[8]
+	{\begin{textblock}{#1}(#2,#3)%
+	 \titulonoticia{#4}{#5}{#6}
+	 #8\begin{multicols*}{#7}
+	 \hspace{\indentplinea}%
+	}
+	{\end{multicols*}
+	 \end{textblock}
+	}

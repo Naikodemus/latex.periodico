@@ -1,0 +1,43 @@
+%!TEX root = ../index.tex
+%!TEX encoding = UTF-8 Unicode
+
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+
+% EMPTY
+\fancypagestyle{empty}{
+	\fancyhf{}
+}
+
+% PLAIN
+\fancypagestyle{plain}{
+	\fancyhf{}
+}
+
+% PORTADA
+\fancypagestyle{portada}{
+	\fancyhf{}
+	\fancyfoot[C]{
+		{\color{AshGray}\rule{\textwidth}{0.5pt}}\\[-1mm]
+		{\color{Black}\footnotesize [~\thepage~]}%
+	}
+}
+
+% PAGINA
+\fancypagestyle{pagina}{
+	\fancyhf{}
+	\fancyhead[L]{
+		{\color{Black}\footnotesize\epoca -- \numero}\\[-3mm]
+	}
+	\fancyhead[C]{
+		{\color{Black}\footnotesize \nombrepub}\\[-3mm]
+		{\color{AshGray}\rule{\textwidth}{0.5pt}}%
+	}
+	\fancyhead[R]{
+		{\color{Black}\footnotesize\fechapub}\\[-3mm]
+	}
+	\fancyfoot[C]{
+		{\color{AshGray}\rule{\textwidth}{0.5pt}}\\[-1mm]
+		{\color{Black}\footnotesize [~\thepage~]}%
+	}
+}
